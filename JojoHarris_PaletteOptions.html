@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palette Options for Jojo Harris</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&family=DM+Sans:wght@400;500;600&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --gold:#B8975A; --pale-gold:#C2A878; --olive:#7D6F3F;
+    --cream:#FAF8F3; --dark:#1A1A1A; --mid:#4A4A4A; --light:#8A8A8A;
+    --border:#E6E0D6;
+    --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost',sans-serif;
+  }
+  body{font-family:var(--sans);background:#EFEAE1;color:var(--dark);font-size:15px;line-height:1.6;padding:0 0 60px;}
+
+  .banner{background:#5500EE;color:#fff;text-align:center;padding:11px 20px;font-size:12px;letter-spacing:.08em;font-family:DM Sans,sans-serif;}
+  .banner span{color:#FFE500;font-weight:600;}
+  .th-footer{background:#1A0A3A;color:#fff;text-align:center;padding:22px 20px;font-family:DM Sans,sans-serif;font-size:13px;margin-top:40px;}
+  .th-footer strong{color:#FFE500;font-weight:600;}
+
+  .intro{max-width:920px;margin:0 auto;padding:36px 24px 8px;}
+  .intro h1{font-family:var(--serif);font-size:34px;font-weight:500;margin-bottom:10px;}
+  .intro p{color:var(--mid);font-size:15px;max-width:680px;}
+
+  .current{max-width:920px;margin:0 auto;padding:20px 24px;}
+  .section-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--light);font-weight:500;margin:28px 0 14px;}
+
+  .grid{max-width:920px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  @media(max-width:760px){.grid{grid-template-columns:1fr;}}
+
+  /* Product card */
+  .card{background:var(--cream);border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+  .card-tag{padding:10px 16px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:#fff;text-align:center;}
+  .card-body{padding:20px;}
+  .card-img{aspect-ratio:1;background:#F0EBE2 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' fill='none' stroke='%23C2A878' stroke-width='1'%3E%3Ccircle cx='30' cy='24' r='10'/%3E%3Cpath d='M30 34 L30 48 M22 54 L38 54' stroke-linecap='round'/%3E%3C/svg%3E") center/60px no-repeat;border-radius:3px;margin-bottom:16px;display:flex;align-items:flex-end;justify-content:flex-start;}
+  .collection{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:6px;}
+  .name{font-family:var(--serif);font-size:23px;font-weight:500;margin-bottom:4px;}
+  .price{font-family:var(--serif);font-size:20px;color:var(--mid);margin-bottom:18px;}
+
+  .atc{display:block;width:100%;border:none;padding:15px;font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;cursor:pointer;color:#fff;margin-bottom:8px;border-radius:2px;}
+  .wishlist{display:block;width:100%;background:transparent;padding:12px;font-family:var(--sans);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border);border-radius:2px;cursor:pointer;}
+
+  .opt-name{font-family:var(--serif);font-size:22px;font-weight:500;margin-bottom:2px;}
+  .opt-hex{font-size:12px;color:var(--light);letter-spacing:.05em;margin-bottom:14px;font-family:var(--sans);}
+  .opt-note{font-size:13px;color:var(--mid);margin-top:14px;line-height:1.5;}
+
+  /* purchase path demo strip */
+  .path-demo{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:14px;padding:12px;background:var(--cream);border:1px solid var(--border);border-radius:3px;}
+  .path-step{color:#fff;font-size:10px;letter-spacing:.04em;text-transform:uppercase;font-weight:500;padding:5px 9px;border-radius:2px;white-space:nowrap;}
+  .path-arrow{color:var(--light);font-size:13px;}
+
+  /* primary vs secondary demo */
+  .tier-demo{max-width:920px;margin:0 auto;padding:0 24px;margin-top:20px;}
+  .tier-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px;}
+  @media(max-width:760px){.tier-grid{grid-template-columns:1fr;}}
+  .tier-card{background:var(--cream);border:1px solid var(--border);border-radius:4px;padding:22px;}
+  .tier-tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:var(--light);margin-bottom:14px;}
+  .btn-primary{display:block;width:100%;border:none;padding:15px;font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:#fff;border-radius:2px;cursor:pointer;margin-bottom:12px;}
+  .btn-secondary{display:block;width:100%;background:transparent;padding:14px;font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;border-radius:2px;cursor:pointer;margin-bottom:12px;}
+  .btn-neutral{display:block;width:100%;background:transparent;padding:13px;font-family:var(--sans);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border);border-radius:2px;cursor:pointer;}
+  .tier-note{font-size:12.5px;color:var(--mid);margin-top:6px;line-height:1.5;}
+
+  /* swatch dots for the supporting palette */
+  .palette-strip{display:flex;gap:0;margin:6px 0 0;border-radius:3px;overflow:hidden;border:1px solid var(--border);max-width:280px;}
+  .palette-strip .sw{flex:1;height:34px;}
+  .roles{max-width:920px;margin:0 auto;padding:8px 24px;}
+  .role-row{display:flex;align-items:center;gap:14px;padding:9px 0;border-bottom:1px solid var(--border);}
+  .role-dot{width:30px;height:30px;border-radius:50%;flex-shrink:0;border:1px solid rgba(0,0,0,.08);}
+  .role-text{font-size:14px;color:var(--mid);}
+  .role-text strong{color:var(--dark);font-weight:500;}
+  .role-hex{margin-left:auto;font-size:12px;color:var(--light);}
+</style>
+</head>
+<body>
+
+<div class="banner"><span>Two Hoots Digital</span> &nbsp;·&nbsp; Colour options prepared for Jojo Harris</div>
+
+<div class="intro">
+  <h1>Choosing your action colour</h1>
+  <p>Jo, this one is your call. At the moment several golds, black and a stray blue all compete on the page, so nothing leads the eye toward buying. The idea here is to give your whole purchase path one colour, used nowhere else, so a shopper is led by colour from the first "Shop the collection" button, through Add to Cart, to the cart, and all the way to Place Order. Every step on the way to buying wears the same colour, and nothing else does. That's what trains the eye: this colour means "a step closer to owning it". Below is one of your product cards shown with four different action colours. Your gold, cream and olive stay exactly as they are. Have a look on your phone and on a larger screen if you can, and see which feels most like you. There's no wrong answer; they all work and all pass accessibility. When you've decided, let me know and I'll build it into your full colour palette and map out exactly where it should appear across the site.</p>
+</div>
+
+<div class="grid">
+
+  <!-- Teal -->
+  <div>
+    <div class="opt-name">Option 1: Deep Teal</div>
+    <div class="opt-hex">#1F5F5B · white text · contrast 7.4:1</div>
+    <div class="card">
+      <div class="card-tag" style="background:var(--gold);">New In</div>
+      <div class="card-body">
+        <div class="card-img"></div>
+        <div class="collection">Aquamarine Collection</div>
+        <div class="name">Genevieve Necklace</div>
+        <div class="price">£145.00</div>
+        <button class="atc" style="background:#1F5F5B;">Add to Cart</button>
+        <button class="wishlist">♡ Add to Wishlist</button>
+      </div>
+    </div>
+    <div class="path-demo">
+      <span class="path-step" style="background:#1F5F5B;">Shop</span>
+      <span class="path-arrow">→</span>
+      <span class="path-step" style="background:#1F5F5B;">Add to Cart</span>
+      <span class="path-arrow">→</span>
+      <span class="path-step" style="background:#1F5F5B;">Cart</span>
+      <span class="path-arrow">→</span>
+      <span class="path-step" style="background:#1F5F5B;">Checkout</span>
+    </div>
+    <p class="opt-note">A jewel tone that complements gold beautifully. Fresh and confident without being loud. Reads as premium.</p>
+  </div>
+
+  <!-- Forest green -->
+  <div>
+    <div class="opt-name">Option 2: Forest Green</div>
+    <div class="opt-hex">#2C5545 · white text · contrast 8.4:1</div>
+    <div class="card">
+      <div class="card-tag" style="background:var(--gold);">New In</div>
+      <div class="card-body">
+        <div class="card-img"></div>
+        <div class="collection">Aquamarine Collection</div>
+        <div class="name">Genevieve Necklace</div>
+        <div class="price">£145.00</div>
+        <button class="atc" style="background:#2C5545;">Add to Cart</button>
+        <button class="wishlist">♡ Add to Wishlist</button>
+      </div>
+    </div>
+    <div class="path-demo">
+      <span class="path-step" style="background:#2C5545;">Shop</span>
+      <span class="path-arrow">→</span>
+      <span class="path-step" style="background:#2C5545;">Add to Cart</span>
+      <span class="path-arrow">→</span>
+      <span class="path-step" style="background:#2C5545;">Cart</span>
+      <span class="path-arrow">→</span>
+      <span class="path-step" style="background:#2C5545;">Checkout</span>
+    </div>
+    <p class="opt-note">Natural, calm and grounded. Pairs with gold like ivy on a frame. The most understated, classic option.</p>
+  </div>
+
+  <!-- Plum -->
+  <div>
+    <div class="opt-name">Option 3: Deep Plum</div>
+    <div class="opt-hex">#5B2A41 · white text · contrast 11.3:1</div>
+    <div class="card">
+      <div class="card-tag" style="background:var(--gold);">New In</div>
+      <div class="card-body">
+        <div class="card-img"></div>
+        <div class="collection">Aquamarine Collection</div>
+        <div class="name">Genevieve Necklace</div>
+        <div class="price">£145.00</div>
+        <button class="atc" style="background:#5B2A41;">Add to Cart</button>
+        <button class="wishlist">♡ Add to Wishlist</button>
+      </div>
+    </div>
+    <div class="path-demo">
+      <span class="path-step" style="background:#5B2A41;">Shop</span>
+      <span class="path-arrow">→</span>
+      <span class="path-step" style="background:#5B2A41;">Add to Cart</span>
+      <span class="path-arrow">→</span>
+      <span class="path-step" style="background:#5B2A41;">Cart</span>
+      <span class="path-arrow">→</span>
+      <span class="path-step" style="background:#5B2A41;">Checkout</span>
+    </div>
+    <p class="opt-note">Rich, warm and feminine. Feels considered and a little luxurious. Leans into the 55+ female audience.</p>
+  </div>
+
+  <!-- Navy -->
+  <div>
+    <div class="opt-name">Option 4: Ink Navy</div>
+    <div class="opt-hex">#1E3A5F · white text · contrast 11.5:1</div>
+    <div class="card">
+      <div class="card-tag" style="background:var(--gold);">New In</div>
+      <div class="card-body">
+        <div class="card-img"></div>
+        <div class="collection">Aquamarine Collection</div>
+        <div class="name">Genevieve Necklace</div>
+        <div class="price">£145.00</div>
+        <button class="atc" style="background:#1E3A5F;">Add to Cart</button>
+        <button class="wishlist">♡ Add to Wishlist</button>
+      </div>
+    </div>
+    <div class="path-demo">
+      <span class="path-step" style="background:#1E3A5F;">Shop</span>
+      <span class="path-arrow">→</span>
+      <span class="path-step" style="background:#1E3A5F;">Add to Cart</span>
+      <span class="path-arrow">→</span>
+      <span class="path-step" style="background:#1E3A5F;">Cart</span>
+      <span class="path-arrow">→</span>
+      <span class="path-step" style="background:#1E3A5F;">Checkout</span>
+    </div>
+    <p class="opt-note">Classic and safe. Versatile and smart, though slightly less distinctive against gold than the jewel tones above.</p>
+  </div>
+
+</div>
+
+<div class="tier-demo">
+  <div class="section-label">Two strengths of the action colour</div>
+  <p style="color:var(--mid);font-size:14px;max-width:680px;margin-bottom:6px;">One more thing worth understanding. To keep the action colour powerful, it works in two strengths. The <strong>solid</strong> version is for the single most important next step on a page, only one per screen. The <strong>outline</strong> version is for other "keep shopping" steps like collection buttons, so they clearly belong to the journey without competing with the main action. Anything that isn't part of shopping at all stays neutral. (Shown in teal, it adapts to whichever colour you choose.)</p>
+  <div class="tier-grid">
+    <div class="tier-card">
+      <div class="tier-tag">On a product page</div>
+      <button class="btn-primary" style="background:#1F5F5B;">Add to Cart</button>
+      <div class="tier-note" style="margin-bottom:16px;">Solid: the one most important action on this page.</div>
+      <button class="btn-secondary" style="border:1px solid #1F5F5B;color:#1F5F5B;">View the Aquamarine Collection</button>
+      <div class="tier-note" style="margin-bottom:16px;">Outline: a "keep shopping" step. Same colour, lighter weight.</div>
+      <button class="btn-neutral">♡ Add to Wishlist</button>
+      <div class="tier-note">Neutral: not a step toward buying, so it stays out of the action colour.</div>
+    </div>
+    <div class="tier-card">
+      <div class="tier-tag">On the homepage</div>
+      <button class="btn-primary" style="background:#1F5F5B;">Shop the Collection</button>
+      <div class="tier-note" style="margin-bottom:16px;">Solid: the single primary call to action in the hero.</div>
+      <button class="btn-secondary" style="border:1px solid #1F5F5B;color:#1F5F5B;">Shop Necklaces</button>
+      <button class="btn-secondary" style="border:1px solid #1F5F5B;color:#1F5F5B;">Shop Earrings</button>
+      <div class="tier-note" style="margin-bottom:16px;">Outline: individual collection buttons. Part of the journey, but not competing with the main action.</div>
+      <button class="btn-neutral">Read Jo's Story</button>
+      <div class="tier-note">Neutral: content, not shopping. Stays neutral.</div>
+    </div>
+  </div>
+</div>
+
+<div class="roles">
+  <div class="section-label">The full palette: roles for each colour</div>
+  <div class="role-row"><div class="role-dot" style="background:#FAF8F3;"></div><div class="role-text"><strong>Cream</strong>: page backgrounds</div><div class="role-hex">#FAF8F3</div></div>
+  <div class="role-row"><div class="role-dot" style="background:#1A1A1A;"></div><div class="role-text"><strong>Near-black</strong>: all body text and headings</div><div class="role-hex">#1A1A1A</div></div>
+  <div class="role-row"><div class="role-dot" style="background:#B8975A;"></div><div class="role-text"><strong>Gold</strong>: accents, borders, lines, icons (not text, not buy buttons)</div><div class="role-hex">#B8975A</div></div>
+  <div class="role-row"><div class="role-dot" style="background:#7D6F3F;"></div><div class="role-text"><strong>Olive</strong>: feature section backgrounds (with cream/white text)</div><div class="role-hex">#7D6F3F</div></div>
+  <div class="role-row"><div class="role-dot" style="background:#1F5F5B;"></div><div class="role-text"><strong>Action colour, solid</strong>: the single most important step on each page: Add to Cart, Checkout, the hero's main Shop button, Place Order</div><div class="role-hex">your pick</div></div>
+  <div class="role-row"><div class="role-dot" style="background:#fff;border:2px solid #1F5F5B;"></div><div class="role-text"><strong>Action colour, outline</strong>: other "keep shopping" steps: collection buttons, category tiles</div><div class="role-hex">same colour</div></div>
+  <div class="role-row" style="border:none;"><div class="role-dot" style="background:repeating-linear-gradient(45deg,#ccc,#ccc 4px,#fff 4px,#fff 8px);"></div><div class="role-text"><strong>The stray blue</strong>: retire it. It doesn't belong to the palette.</div><div class="role-hex">remove</div></div>
+</div>
+
+<div class="th-footer">Prepared by <strong>Two Hoots Digital</strong> &nbsp;·&nbsp; twohoots.digital &nbsp;·&nbsp; Your gold and cream stay exactly as they are. You are choosing the one action colour.</div>
+</body>
+</html>
