@@ -298,7 +298,7 @@
   /* Add to cart */
   .add-to-cart {
     width: 100%;
-    background: var(--dark);
+    background: #1F5F5B;
     color: var(--white);
     border: none;
     padding: 17px 24px;
@@ -308,27 +308,10 @@
     text-transform: uppercase;
     cursor: pointer;
     transition: background 0.2s;
-    margin-bottom: 10px;
+    margin-bottom: 24px;
     font-weight: 500;
   }
-  .add-to-cart:hover { background: #333; }
-
-  .buy-now {
-    width: 100%;
-    background: transparent;
-    color: var(--dark);
-    border: 1px solid var(--dark);
-    padding: 15px 24px;
-    font-family: var(--sans);
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.2s;
-    margin-bottom: 24px;
-    font-weight: 400;
-  }
-  .buy-now:hover { background: var(--dark); color: var(--white); }
+  .add-to-cart:hover { background: #18504C; }
 
   /* Trust signals strip */
   .trust-strip {
@@ -593,16 +576,19 @@
     <a href="#" class="size-guide-link">Not sure of your size? See our ring size guide →</a>
 
     <!-- ADD TO CART -->
-    <div class="annotation red">Add to Cart is prominent, full width, immediately below size selection</div>
+    <div class="annotation red">One single action button in the chosen action colour (shown in teal) — no competing second button</div>
     <button class="add-to-cart">Add to Cart</button>
-    <button class="buy-now">Buy Now</button>
 
     <!-- TRUST SIGNALS - right below the buy button -->
     <div class="annotation green">Trust signals sit directly below the buy button — not buried elsewhere</div>
     <div class="trust-strip">
       <div class="trust-item">
+        <svg class="trust-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1"/></svg>
+        <div><strong>Free UK shipping</strong>On every order, beautifully packaged</div>
+      </div>
+      <div class="trust-item">
         <svg class="trust-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg>
-        <div><strong>Made to order — dispatched within 7 days</strong>Free delivery on all UK orders</div>
+        <div><strong>Made to order — dispatched within 7 days</strong>Each piece made especially for you</div>
       </div>
       <div class="trust-item">
         <svg class="trust-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
